@@ -1,0 +1,27 @@
+O(n^2)
+
+
+class Solution{
+  public:
+    int minJumps(int arr[], int n){
+        int jump = 0 ; 
+        int index = 0 ; 
+        int tempmax = arr[0]; 
+        for(int i = 0 ; i < n ; i++)
+        {
+            for(int j = i; j < i+arr[i] ; j++)
+            {
+                if((arr[j]+arr[i]-j+i) > tempmax)
+                {
+                tempmax = arr[j]+arr[i]-j+i;
+                index = j ;
+                }
+            }
+                jump++;
+                i = index;   
+                if(tempmax = 0)
+                return -1 ; 
+            
+        }
+        return jump;
+}
